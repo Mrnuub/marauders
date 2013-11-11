@@ -3914,7 +3914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ae0ff2f2a7cfe41ab8867165516e1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPlayerAngle: 45
+  maxPlayerAngle: 70
   cameraSmoothing: 5
   minCameraDistance: 10
   maxCameraDistance: 100

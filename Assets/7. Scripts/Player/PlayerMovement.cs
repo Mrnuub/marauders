@@ -3,24 +3,41 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
+	public int playerID;
+	private PlayerObject player;
+	
 	public float turnSmoothing = 15f;
 	public float speedDampTime = 0.1f;
 	
 	private Animator anim;
 	private HashIDs hash;
 	
-	
 	void Awake()
 	{
+		player = new PlayerObject(playerID);
 		anim = GetComponent<Animator>();
 		hash = GameObject.FindGameObjectWithTag(Tags.GameController).GetComponent<HashIDs>();
-		
 	}
 	
 	void FixedUpdate()
 	{
-		float h = Input.GetAxis("Horizontal");
-		float v = Input.GetAxis("Vertical");
+		
+		float h = 0;
+		float v = 0;
+		
+		if(tag.Equals("Player"))
+		{
+			h = Input.GetAxis("360_pl1_Horizontal");
+			v = Input.GetAxis("360_pl1_Vertical");	
+		}else if(tag.Equals("Enemy"))
+		{
+			h = Input.GetAxis("360_pl2_Horizontal");
+			v = Input.GetAxis("360_pl2_Vertical");	
+		}
+		 
+		
+		//float h = player.getHorizontalMovement();
+		//float v = player.getVerticalMovement();
 		
 		MovementManagement(h, v);
 	}
