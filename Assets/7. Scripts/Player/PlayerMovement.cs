@@ -18,6 +18,10 @@ public class PlayerMovement : MonoBehaviour
 		anim = GetComponent<Animator>();
 		hash = GameObject.FindGameObjectWithTag(Tags.GameController).GetComponent<HashIDs>();
 	}
+	void Update()
+	{
+		
+	}
 	
 	void FixedUpdate()
 	{
@@ -27,12 +31,8 @@ public class PlayerMovement : MonoBehaviour
 		
 		if(tag.Equals("Player"))
 		{
-			h = Input.GetAxis("360_pl1_Horizontal");
-			v = Input.GetAxis("360_pl1_Vertical");	
-		}else if(tag.Equals("Enemy"))
-		{
-			h = Input.GetAxis("360_pl2_Horizontal");
-			v = Input.GetAxis("360_pl2_Vertical");	
+			h = Input.GetAxis("Horizontal");
+			v = Input.GetAxis("Vertical");	
 		}
 		 
 		
