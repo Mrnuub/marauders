@@ -41,62 +41,60 @@ public class LevelClick : MonoBehaviour
 	void LevelButtons()
 	{
 		if (GUI.Button (recLevel1, "Level 1")) {
+			Debug.Log ("Level1");
 			ConfigScript.setActiveSceneName(ConfigScript.SceneNames.Level1);
 		}
 		if (GUI.Button (recLevel2, "Level 2")) {
+			Debug.Log ("Level2");
 			ConfigScript.setActiveSceneName(ConfigScript.SceneNames.Level2);
 		}
 		if (GUI.Button (recLevel3, "Level 3")) {
+			Debug.Log ("Level3");
 			ConfigScript.setActiveSceneName(ConfigScript.SceneNames.Level3);
 		}
 		if (GUI.Button (recLevel4, "Level 4")) {
+			Debug.Log ("Level4");
 			ConfigScript.setActiveSceneName(ConfigScript.SceneNames.Level4);
 		}
 		if (GUI.Button (recLevel5, "Level 5")) {
+			Debug.Log ("Level5");
 			ConfigScript.setActiveSceneName(ConfigScript.SceneNames.Level5);
 		}
 		if (GUI.Button (recLevel6, "Level 6")) {
-			
+			Debug.Log ("Level6");
 		}
 		if (GUI.Button (recLevel7, "Level 7")) {
-			
+			Debug.Log ("Level7");
 		}
 		if (GUI.Button (recLevel8, "Level 8")) {
-			
-		}
-		if (GUI.Button (recLevel9, "Level 9")) {
-			
-		}
-		if (GUI.Button (recLevel10, "Level 10")) {
-			
-		}
-		if (GUI.Button (recLevel11, "Level 11")) {
-			
-		}
-		if (GUI.Button (recLevel12, "Level 12")) {
-			
+			Debug.Log ("Level8");
 		}
 	}
 	
 	void ModusButtons()
 	{
 		if (GUI.Button (modus1, "Team Deathmatch")) {
+			Debug.Log ("Team Deathmatch");
 			ConfigScript.setActiveGameMode(ConfigScript.GameModes.TeamDeathMatch);
 		}
 		if (GUI.Button (modus2, "Capture The Flag")) {
+			Debug.Log ("Capture The Flag");
 			ConfigScript.setActiveGameMode(ConfigScript.GameModes.CaptureTheFlag);
 		}
 		if (GUI.Button (modus3, "King of the Hill")) {
+			Debug.Log ("King of the Hill");
 			ConfigScript.setActiveGameMode(ConfigScript.GameModes.KingOfTheHill);
 		}
 		if (GUI.Button (modus4, "Free for all")) {
+			Debug.Log ("Free for all");
 			ConfigScript.setActiveGameMode(ConfigScript.GameModes.FreeForAll);
 		}
 		if (GUI.Button (modus5, "DarkRoom")) {
+			Debug.Log ("DarkRoom");
 			ConfigScript.setActiveGameMode(ConfigScript.GameModes.DarkRoom);
 		}
 		if (GUI.Button (modus6, "Team Modus 2")) {
-			
+			Debug.Log ("Team Modus 2");
 		}
 	}
 }
