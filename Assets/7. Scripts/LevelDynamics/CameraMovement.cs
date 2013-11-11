@@ -5,6 +5,8 @@ using System.Collections.Generic;
 public class CameraMovement : MonoBehaviour
 {
 	private IList<GameObject> trackableObjects = new List<GameObject>();
+	private IList<Vector3> projectedPositions = new List<Vector3>();
+	private IList<GameObject> occluders = new List<GameObject>();
 	public float maxPlayerAngle = 30f;
 	public const float degToRad = 1 / (360 / Mathf.PI);
 	
@@ -13,6 +15,48 @@ public class CameraMovement : MonoBehaviour
 	public float maxCameraDistance = 100f;
 	
 	void FixedUpdate()
+	{
+		UpdateCameraPosition();
+		UpdateOccluderTransparency();
+	}
+	
+	void UpdateOccluderTransparency()
+	{
+		foreach (GameObject obj in occluders)
+		{
+			Color color = obj.renderer.material.color;
+			color.a = 1.0f;
+			
+			obj.renderer.material.color = color;
+		}
+		
+		occluders.Clear();
+		
+		foreach (GameObject obj in trackableObjects)
+		{
+			Vector3 rayDirection = obj.transform.position - transform.position;
+			RaycastHit[] hits = Physics.RaycastAll(transform.position, rayDirection.normalized, rayDirection.magnitude);
+			
+			foreach (RaycastHit hit in hits)
+			{
+				GameObject hitObj = hit.collider.gameObject;
+				if (hitObj != obj && !occluders.Contains(hitObj) && !trackableObjects.Contains(hitObj))
+				{
+					occluders.Add(hitObj);
+				}
+			}
+		}
+		
+		foreach (GameObject obj in occluders)
+		{
+			Color color = obj.renderer.material.color;
+			color.a = 0.5f;
+			
+			obj.renderer.material.color = color;
+		}
+	}
+	
+	void UpdateCameraPosition()
 	{
 		Vector3 minPosition, maxPosition;
 		
@@ -34,8 +78,7 @@ public class CameraMovement : MonoBehaviour
 		
 		Vector3 viewDirection = this.transform.forward;
 		
-		IList<Vector3> projectedPositions = new List<Vector3>();
-		
+		projectedPositions.Clear();
 		foreach (GameObject player in trackableObjects)
 		{
 			projectedPositions.Add(Project(playerCenter, -viewDirection, player.transform.position));

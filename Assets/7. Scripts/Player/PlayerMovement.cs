@@ -58,9 +58,12 @@ public class PlayerMovement : MonoBehaviour
 	void Rotating (float horizontal, float vertical)
 	{
 		Vector3 targetDirection = new Vector3(horizontal, 0f, vertical);
-		Quaternion targetRotation = Quaternion.LookRotation(targetDirection, Vector3.up);
-		Quaternion newRotation = Quaternion.Lerp(rigidbody.rotation, targetRotation, turnSmoothing * Time.deltaTime);
-		
-		rigidbody.MoveRotation(newRotation);
+		if (targetDirection.sqrMagnitude != 0)
+		{
+			Quaternion targetRotation = Quaternion.LookRotation(targetDirection, Vector3.up);
+			Quaternion newRotation = Quaternion.Lerp(rigidbody.rotation, targetRotation, turnSmoothing * Time.deltaTime);
+			
+			rigidbody.MoveRotation(newRotation);
+		}
 	}
 }
