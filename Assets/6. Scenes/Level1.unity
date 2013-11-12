@@ -3744,7 +3744,7 @@ GUIText:
   m_GameObject: {fileID: 649801361}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: testt
+  m_Text: 
   m_Anchor: 0
   m_Alignment: 0
   m_PixelOffset: {x: 0, y: 0}
@@ -3766,7 +3766,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 649801361}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: .0355983377, y: .935145378, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7279,7 +7279,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6500000, guid: 0105a6e98cf89ba40ae0c4ae40174039, type: 2}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 0105a6e98cf89ba40ae0c4ae40174039, type: 2}
       propertyPath: text
@@ -10244,6 +10244,7 @@ GameObject:
   - 65: {fileID: 1760857991}
   - 23: {fileID: 1760857990}
   - 114: {fileID: 1760857994}
+  - 135: {fileID: 1760857995}
   m_Layer: 0
   m_Name: flag
   m_TagString: Untagged
@@ -10278,7 +10279,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 1308845392}
   m_GameObject: {fileID: 1760857989}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -10316,6 +10317,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1172637117}
   captured: {fileID: 649801362}
+--- !u!135 &1760857995
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1760857989}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1766045221
 GameObject:
   m_ObjectHideFlags: 0
