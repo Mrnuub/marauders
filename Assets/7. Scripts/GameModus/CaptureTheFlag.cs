@@ -63,5 +63,4 @@ public class CaptureTheFlag : MonoBehaviour
         timeCapture = resetCapture;
 		text.text = "Counter: " + resetCapture;
     }
-
 }
