@@ -14,6 +14,7 @@ Library/*
 Assets/1. Models/*
 Assets/2. Textures/*
 Assets/4. Animations/*
+ProjectSettings/EditorSettings.asset
 
 AnnotationManager
 assetDatabase3
