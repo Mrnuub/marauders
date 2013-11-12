@@ -14,7 +14,7 @@ public class CaptureTheFlag : MonoBehaviour
 	
 	void OnTriggerEnter(Collider other)
 	{
-		if(other.gameObject.tag == "Player1")
+		if(other.gameObject.tag == "Player")
 		{
 			playerOneInArea = true;
 		}
@@ -31,7 +31,7 @@ public class CaptureTheFlag : MonoBehaviour
 			return;
 		}
 		
-		if(other.gameObject.tag == "Player1" || other.gameObject.tag == "Player2")
+		if(other.gameObject.tag == "Player" || other.gameObject.tag == "Player2")
 		{
 			text.text = "Counter: " + timeCapture;
 			timeCapture -= Time.deltaTime;
@@ -49,7 +49,7 @@ public class CaptureTheFlag : MonoBehaviour
 	
 	void OnTriggerExit(Collider other) 
 	{
-		if(other.gameObject.tag == "Player1")
+		if(other.gameObject.tag == "Player")
 		{
 			playerOneInArea = false;
 			captured.text = "";

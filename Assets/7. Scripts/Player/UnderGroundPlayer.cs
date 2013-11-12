@@ -14,6 +14,9 @@ public class UnderGroundPlayer : MonoBehaviour
 	
 	void Update()
 	{
-		//underground_player.light.transform.position = player.transform.position;
+		if(Input.GetKey(KeyCode.Space))
+		{
+			
+		}
 	}
 }
